@@ -79,7 +79,7 @@ static void __attribute((noreturn)) reset(uint8_t ResetPeripherals)
 
 static void NVIC_init(void)
 {
-    uint8_t i;
+    size_t i;
 
     // Disable all interrupts
     for(i = 0; i < ARRAY_SIZE(NVIC_BASE_PTR->ICER); i++)
@@ -118,7 +118,7 @@ static void NVIC_init(void)
 
 static void NVIC_DeInit(void)
 {
-    uint8_t i;
+    size_t i;
 
     asm volatile("CPSID I\n");  // disable interrupts
 

@@ -631,7 +631,7 @@ int16_t BLDC_getTargetPWM()
 int32_t BLDC_getMeasuredCurrent()
 {
 	int32_t sum = 0;
-	for (uint8_t i = 0; i < ARRAY_SIZE(adcSamples); i++)
+	for (size_t i = 0; i < ARRAY_SIZE(adcSamples); i++)
 	{
 		sum += adcSamples[i];
 	}
