@@ -305,7 +305,7 @@ void CDC1_App_Callback(byte controller_ID, byte event_type, void *val)
     /* Copy Received Data buffer to Application Buffer */
     USB_PACKET_SIZE BytesToBeCopied;
     APP_DATA_STRUCT *dp_rcv = (APP_DATA_STRUCT*)val;
-    uint_8 index;
+    uint_16 index;
 
     BytesToBeCopied = (USB_PACKET_SIZE)((dp_rcv->data_size > CDC1_DATA_BUFF_SIZE) ? CDC1_DATA_BUFF_SIZE:dp_rcv->data_size);
     for(index = 0; index<BytesToBeCopied ; index++) {
